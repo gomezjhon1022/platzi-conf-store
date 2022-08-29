@@ -1,44 +1,44 @@
-.Information {
+.information {
   grid-template-columns: 3fr 1fr;
   grid-gap: 2rem;
   grid-row-gap: 1.5em;
   display: grid;
   margin: 0 0 4em 0;
 }
-.Information-buttons {
+.information-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.Information-sidebar {
+.information-sidebar {
   margin: 10px 0 0 0;
 }
-.Information-back {
+.information-back {
   margin: 10px 0 0 0;
 }
-.Information-item {
+.information-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.Information-item .fas {
+.information-item .fas {
   margin: 0 0 0 10px;
   color: rgba(0,0,0,0.4);
   cursor: pointer;
 }
-.Information-item button {
+.information-item button {
   background-color: transparent;
   border: none;
   outline: none;
 }
-.Information-element {
+.information-element {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   border-bottom: 1px solid #eee;
 }
-.Information-element h4 {
+.information-element h4 {
   margin: 0;
 }
 h2 {
@@ -68,10 +68,10 @@ input {
   width: 100%;
   box-sizing: border-box;
 }
-.Information-buttons {
+.information-buttons {
   margin: 10px 0 0 ;
 }
-.Information button {
+.information button {
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
     background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
     background-color: #63b8ee;
