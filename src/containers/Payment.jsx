@@ -1,5 +1,4 @@
-import React from 'react';
-import { useContext } from 'react/cjs/react.production.min';
+import React, { useContext } from 'react';
 import { PayPalButton } from 'react-paypal-button-v2';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +8,7 @@ const Payment = () => {
   const { addNewOrder, state: { cart, buyer } } = useContext(AppContext);
   const navigate = useNavigate();
   const paypalOptions = {
-    clientId: 'AVLB9OoX8pVP6x37T4NAGWeUCon7zlSDtdKtOaw7gJAtd9Zg_rK-0_YTque5tRg8H7E4aQxhAnSSawRM',
+    clientId: process.env.REACT_APP_CLIENT_ID,
     intent: 'capture',
     currency: 'USD',
   };
@@ -53,10 +52,9 @@ const Payment = () => {
             paypalOptions={paypalOptions}
             buttonStyles={buttonStyles}
             amount={handleSumTotal()}
-            onPaymentStart={() => console.log('Start Payment')}
-            onPaymentSuccess={(data) => handlePaymentSuccess(data)}
-            onPaymentError={(error) => console.log(error)}
-            onPaymentCancel={(data) => console.log(data)}
+            onSuccess={data => handlePaymentSuccess(data)}
+            onError={error => console.log(error)}
+            onCancel={data => console.log(data)}
         />
         </div>
       </div>
