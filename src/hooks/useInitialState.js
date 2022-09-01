@@ -29,12 +29,19 @@ const useInitialState = () => {
       orders: [...state.orders, payload]
     })
   }
+  const removeAllFromCart = () => {
+    setState({
+      ...state,
+      cart: [],
+    });
+  }
   return {
     addToCart,
     removeFromCart,
     addToBuyer,
     addNewOrder,
     state,
+    removeAllFromCart
   }
 };
 

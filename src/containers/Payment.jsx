@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/components/Payment.css';
 
 const Payment = () => {
-  const { addNewOrder, state: { cart, buyer } } = useContext(AppContext);
+  const { addNewOrder,removeAllFromCart, state: { cart, buyer } } = useContext(AppContext);
   const navigate = useNavigate();
   const paypalOptions = {
     clientId: process.env.REACT_APP_CLIENT_ID,
@@ -17,7 +17,6 @@ const Payment = () => {
     shape: 'rect',
   };
   const handlePaymentSuccess = (data) => {
-    console.log(data);
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
@@ -25,7 +24,8 @@ const Payment = () => {
         payment: data,
       };
       addNewOrder(newOrder);
-      navigate('/checkout/success')
+      navigate('/checkout/success');
+      removeAllFromCart();
     }
   };
 
