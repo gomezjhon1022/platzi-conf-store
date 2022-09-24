@@ -59,7 +59,7 @@ const Information = () => {
           <div className="information-item" key={item.title}>
             <div className="information-element">
               <h4>{item.title}</h4>
-              <span>% {item.price}</span>
+              <span>$ {item.price}</span>
             </div>
           </div>
         ))}
